@@ -13,7 +13,9 @@ print_r('Informe o valor, data e descrição da receita.'.PHP_EOL);
 $value = null;
 
 while ($value == null) {
-    $value = readline('Valor recebido: ');
+
+    print_r('Valor gasto: ');
+    $value = stream_get_line(STDIN, 1024, PHP_EOL);
 
     $checkValueIsFloat = filter_var($value, FILTER_VALIDATE_FLOAT);
 
@@ -26,7 +28,9 @@ while ($value == null) {
 $day = null;
 
 while ($day == null) {
-    $day = readline('Informe o DIA: ');
+
+    print_r('Informe o DIA: ');
+    $day = stream_get_line(STDIN, 1024, PHP_EOL);
 
     $checkDayIsInt = filter_var($day, FILTER_VALIDATE_INT);
 
@@ -39,7 +43,9 @@ while ($day == null) {
 $month = null;
 
 while ($month == null) {
-    $month = readline('Informe o MÊS: ');
+
+    print_r('Informe o MES: ');
+    $month = stream_get_line(STDIN, 1024, PHP_EOL);
 
     $checkMonthIsInt = filter_var($month, FILTER_VALIDATE_INT);
 
@@ -52,7 +58,9 @@ while ($month == null) {
 $year = null;
 
 while ($year == null) {
-    $year = readline('Informe o ANO: ');
+
+    print_r('Informe o ANO: ');
+    $year = stream_get_line(STDIN, 1024, PHP_EOL);
 
     $checkYearIsInt = filter_var($year, FILTER_VALIDATE_INT);
 
@@ -65,7 +73,9 @@ while ($year == null) {
 $description = null;
 
 while ($description == null) {
-    $description = readline('Informe a descrição: ');
+
+    print_r('Informe a descrição: ');
+    $description = stream_get_line(STDIN, 1024, PHP_EOL);
 
     if (strlen($description) < 0 || strlen($description) > 20) {
         print_r('A descrição informada não é valida!'.PHP_EOL);

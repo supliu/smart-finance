@@ -23,7 +23,9 @@ print_r(PHP_EOL);
 $option = null;
 
 while ($option == null) {
-    $option = readline('Digite a opção escolhida: ');
+    
+    print_r('Digite a opção escolhida: ');
+    $option = stream_get_line(STDIN, 1024, PHP_EOL);
 
     $checkOptionIsInt = filter_var($option, FILTER_VALIDATE_INT);
 
