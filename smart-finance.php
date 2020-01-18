@@ -8,14 +8,14 @@ print_r('|-------------------------------|'.PHP_EOL);
 
 print_r(PHP_EOL);
 
-print_r('O que você deseja fazer? (Escolha uma das seguintes opções)'.PHP_EOL);
+print_r('O que voce deseja fazer? (Escolha uma das seguintes opcoes)'.PHP_EOL);
 
 print_r(PHP_EOL);
 print_r(PHP_EOL);
 
 print_r('1) Cadastrar Receita '.PHP_EOL);
 print_r('2) Cadastrar Despesa '.PHP_EOL);
-print_r('3) Ver relatório de gastos '.PHP_EOL);
+print_r('3) Ver relatorio de gastos '.PHP_EOL);
 print_r('4) Sair '.PHP_EOL);
 
 print_r(PHP_EOL);
@@ -24,13 +24,13 @@ $option = null;
 
 while ($option == null) {
     
-    print_r('Digite a opção escolhida: ');
+    print_r('Digite a opcao escolhida: ');
     $option = stream_get_line(STDIN, 1024, PHP_EOL);
 
     $checkOptionIsInt = filter_var($option, FILTER_VALIDATE_INT);
 
     if (false == $checkOptionIsInt || $option < 0 || $option > 4) {
-        print_r('Opção inválida!'.PHP_EOL);
+        print_r('Opção invalida!'.PHP_EOL);
         $option = null;
     }
 }
@@ -53,5 +53,5 @@ switch ($option) {
 print_r(PHP_EOL);
 
 print_r('|---------------------------------------------------|'.PHP_EOL);
-print_r('|  Até logo! :-) Obrigado por usar o SmartFinance!  |'.PHP_EOL);
+print_r('|  Ate logo! :-) Obrigado por usar o SmartFinance!  |'.PHP_EOL);
 print_r('|---------------------------------------------------|'.PHP_EOL);

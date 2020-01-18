@@ -3,9 +3,9 @@
 print_r(PHP_EOL);
 
 print_r('|----------------------------------------------------------------|'.PHP_EOL);
-print_r('|                 Relatório de Receitas e Despesas               |'.PHP_EOL);
+print_r('|                 Relatorio de Receitas e Despesas               |'.PHP_EOL);
 print_r('|----------------------------------------------------------------|'.PHP_EOL);
-print_r('| Tipo     | Valor      | Data       | Descrição                 |'.PHP_EOL);
+print_r('| Tipo     | Valor      | Data       | Descricao                 |'.PHP_EOL);
 print_r('|----------------------------------------------------------------|'.PHP_EOL);
 
 $lines = [];
@@ -92,5 +92,5 @@ foreach($lines as $row){
 $totalFormated = str_pad($total, 51, ' ', STR_PAD_RIGHT);
 
 print_r('|----------------------------------------------------------------|'.PHP_EOL);
-print_r('|Total:    | '.$totalFormated.' |'.PHP_EOL);
+print_r('| Total:   | '.$totalFormated.' |'.PHP_EOL);
 print_r('|----------------------------------------------------------------|'.PHP_EOL);
