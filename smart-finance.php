@@ -1,53 +1,50 @@
 <?php
 
+require_once 'functions.php';
+
 print_r(PHP_EOL);
 
 print_r('|-------------------------------|'.PHP_EOL);
 print_r('|  Bem vindo ao SmartFinance!   |'.PHP_EOL);
 print_r('|-------------------------------|'.PHP_EOL);
 
-print_r(PHP_EOL);
+$exit = false;
 
-print_r('O que voce deseja fazer? (Escolha uma das seguintes opcoes)'.PHP_EOL);
+while ($exit == false) {
+    print_r(PHP_EOL.'O que voce deseja fazer agora? (Escolha uma das seguintes opcoes)'.PHP_EOL);
 
-print_r(PHP_EOL);
-print_r(PHP_EOL);
+    print_r(PHP_EOL);
+    print_r(PHP_EOL);
 
-print_r('1) Cadastrar Receita '.PHP_EOL);
-print_r('2) Cadastrar Despesa '.PHP_EOL);
-print_r('3) Ver relatorio de gastos '.PHP_EOL);
-print_r('4) Sair '.PHP_EOL);
+    print_r('1) Cadastrar Receita '.PHP_EOL);
+    print_r('2) Cadastrar Despesa '.PHP_EOL);
+    print_r('3) Ver relatorio de gastos '.PHP_EOL);
+    print_r('4) Sair '.PHP_EOL);
 
-print_r(PHP_EOL);
+    print_r(PHP_EOL);
 
-$option = null;
+    $option = readString('Digite uma opção: ');
 
-while ($option == null) {
-    
-    print_r('Digite a opcao escolhida: ');
-    $option = stream_get_line(STDIN, 1024, PHP_EOL);
+    switch ($option) {
+        case 1:
+            include 'options/create-recipe.php';
 
-    $checkOptionIsInt = filter_var($option, FILTER_VALIDATE_INT);
+        break;
+        case 2:
+            include 'options/create-expense.php';
 
-    if (false == $checkOptionIsInt || $option < 0 || $option > 4) {
-        print_r('Opção invalida!'.PHP_EOL);
-        $option = null;
+        break;
+        case 3:
+            include 'options/report.php';
+
+        break;
+        case 4:
+            $exit = true;
+        break;
+        default:
+            print_r('Opcao invalida!'.PHP_EOL);
+        break;
     }
-}
-
-switch ($option) {
-    case 1:
-        include('options/create-recipe.php');
-
-    break;
-    case 2:
-        include('options/create-expense.php');
-
-    break;
-    case 3:
-        include('options/report.php');
-    
-    break;
 }
 
 print_r(PHP_EOL);
