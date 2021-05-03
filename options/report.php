@@ -11,12 +11,12 @@ print_r('|----------------------------------------------------------------|'.PHP
 // Buscando receitas
 $fileRecipes = __DIR__.'/../database/recipes.csv';
 
-$recipes = readFileToArray('RECEITAS', $fileRecipes);
+$recipes = readFileToArray('RECEITA', $fileRecipes);
 
 // Buscando despesas.
 $fileExpenses = __DIR__.'/../database/expenses.csv';
 
-$expenses = readFileToArray('DESPESAS', $fileExpenses);
+$expenses = readFileToArray('DESPESA', $fileExpenses);
 
 // Juntando receitas e despesas em um único array
 $lines = array_merge($recipes, $expenses);
