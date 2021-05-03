@@ -1,7 +1,5 @@
 <?php
 
-require_once 'functions.php';
-
 print_r(PHP_EOL);
 
 print_r('|--------------------------------------|'.PHP_EOL);

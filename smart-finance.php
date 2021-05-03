@@ -1,6 +1,6 @@
 <?php
 
-require_once 'functions.php';
+include 'functions.php';
 
 print_r(PHP_EOL);
 
