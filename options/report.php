@@ -8,47 +8,20 @@ print_r('|----------------------------------------------------------------|'.PHP
 print_r('| Tipo     | Valor      | Data       | Descricao                 |'.PHP_EOL);
 print_r('|----------------------------------------------------------------|'.PHP_EOL);
 
-$lines = [];
-
-/*
- * Buscando receitas e preenchendo o array de linhas.
- */
+// Buscando receitas
 $fileRecipes = __DIR__.'/../database/recipes.csv';
 
-$recipesArray = file($fileRecipes);
+$recipes = readFileToArray('RECEITAS', $fileRecipes);
 
-for ($i = 0; $i < count($recipesArray); ++$i) {
-    $lineArray = str_getcsv($recipesArray[$i]);
-
-    $lines[] = [
-        'type' => 'RECEITA',
-        'description' => $lineArray[0],
-        'value' => $lineArray[1],
-        'date' => $lineArray[2],
-    ];
-}
-
-/*
- * Buscando despesas e preenchendo o array de linhas.
- */
+// Buscando despesas.
 $fileExpenses = __DIR__.'/../database/expenses.csv';
 
-$expensesArray = file($fileExpenses);
+$expenses = readFileToArray('DESPESAS', $fileExpenses);
 
-for ($i = 0; $i < count($expensesArray); ++$i) {
-    $lineArray = str_getcsv($expensesArray[$i]);
+// Juntando receitas e despesas em um único array
+$lines = array_merge($recipes, $expenses);
 
-    $lines[] = [
-        'type' => 'DESPESA',
-        'description' => $lineArray[0],
-        'value' => $lineArray[1],
-        'date' => $lineArray[2],
-    ];
-}
-
-/*
- * Percorrendo o array de linhas, formatando e imprimindo os dados.
- */
+// Percorrendo o array de linhas, formatando e imprimindo os dados.
 $total = 0;
 
 foreach ($lines as $row) {
