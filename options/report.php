@@ -34,9 +34,6 @@ foreach ($lines as $row) {
     }
 
     $value = str_pad($row['value'], 10, ' ', STR_PAD_RIGHT);
-
-    $day = str_pad($row['day'], 2, '0', STR_PAD_LEFT);
-    $month = str_pad($row['month'], 2, '0', STR_PAD_LEFT);
     $date = str_pad($row['date'], 10, ' ', STR_PAD_RIGHT);
     $description = str_pad($row['description'], 25, ' ', STR_PAD_RIGHT);
 
